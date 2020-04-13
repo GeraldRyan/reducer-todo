@@ -1,0 +1,13 @@
+
+/* div{
+  border:1px solid red;
+} */
+div .task{
+  font-weight:bold;
+  margin: 5px 0;
+  font-size:2rem;
+  color:rgb(0, 121, 36);
+}
+div .task.completed{
+  text-decoration:line-through;
+}
