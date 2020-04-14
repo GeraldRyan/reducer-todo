@@ -7,7 +7,7 @@ export default function Todo(props)
     <div
     id={props.id}
     className={`task${props.completed ? ' completed' : ''}`}
-    onClick={() => props.toggleCompleted(props.id)}
+    onClick={props.toggleCompleted}
     >
       <p >{props.task}</p>
     </div>

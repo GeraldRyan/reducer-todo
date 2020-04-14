@@ -3,7 +3,6 @@ import React from 'react'
 
 class TodoForm extends React.Component
 {
-
   constructor(props)
   {
     super(props);
@@ -20,10 +19,12 @@ class TodoForm extends React.Component
   handleSubmit = (e) =>
   {
     e.preventDefault()
-    this.props.addTask(e, this.state.text)
-    this.setState({
-      text: ""
-    })  
+    const newTask = {
+      task: this.state.text,
+      id: Date.now(),
+      completed: false
+    }
+    this.props.addTask(newTask)
   }
 
   render()
@@ -38,7 +39,7 @@ class TodoForm extends React.Component
             onChange={this.handleChange}
             placeholder="enter your task"
             value={this.state.text} />
-          <button onClick={this.handleSubmit}  >Add Todo</button>
+          <button  >Add Todo</button>
           <button onClick={this.props.clearCompleted}>Clear Completed</button>
           <br/>
           <br/>
