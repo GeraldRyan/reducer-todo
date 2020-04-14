@@ -40,6 +40,7 @@ function App()
 // console.log("state", state)
   const clearCompleted = e =>
   {
+    e.preventDefault()
     dispatch({type:"CLEAR"})
   }
 // console.log('state',state)

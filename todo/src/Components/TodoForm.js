@@ -25,6 +25,7 @@ class TodoForm extends React.Component
       completed: false
     }
     this.props.addTask(newTask)
+    this.setState({text:""})
   }
 
   render()
@@ -33,18 +34,19 @@ class TodoForm extends React.Component
 
       <div>
         <h1>Welcome to Today </h1>
-        <form onSubmit={this.handleSubmit} action="">
+        <form  action="">
           <input name="text"
             type="text"
             onChange={this.handleChange}
             placeholder="enter your task"
             value={this.state.text} />
-          <button  >Add Todo</button>
-          <button onClick={this.props.clearCompleted}>Clear Completed</button>
+          <button onClick = {this.handleSubmit} >Add Todo</button>
           <br/>
           <br/>
 
         </form>
+        <button onClick={this.props.clearCompleted}>Clear Completed</button>
+
         {/* <p>{this.props.todo.task}</p> */}
       </div>
     )

@@ -28,7 +28,8 @@ export const reducer = (state, action) =>
     case 'CLEAR':
       const dummyV = state.tasks.filter((e) => e.completed !==true)
       console.log("Dummy Variable", dummyV)
-      return {...state, task:dummyV    }
+      console.log("Everything", {...state, task:dummyV    })
+      return {...state, tasks:dummyV    }
     case 'ADDING':
       // console.log('action payload',action.payload)
       // console.log('state.tasks action.payload',[...state.tasks,action.payload])
